@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 💻 Mansi Jogani — Portfolio Website
 Welcome to my personal portfolio website built with **React.js**, **Framer Motion**, and modern UI design principles.
 It showcases my work, projects, skills, and journey as a developer focused on web development and practical applications.
@@ -81,3 +82,6 @@ Feel free to fork, use, and build upon it ⭐
 ---
 
 > *“Showcasing my work and passion through technology 💻”*
+=======
+# Mansi_Portfolio
+>>>>>>> 34bafa2ea43345d64a7c30571163536d4ae6b22b

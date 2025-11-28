@@ -74,10 +74,26 @@ export default function Contact() {
         },
         (error) => {
           console.error("FAILED...", error);
-          if (error.text) {
-            setStatus(`❌ Failed to send: ${error.text}`);
+          
+          // Create mailto link as fallback
+          const subject = encodeURIComponent(form.subject);
+          const body = encodeURIComponent(
+            `Hi Mansi,\n\nName: ${form.name}\nContact: ${form.contact}\n\nMessage:\n${form.message}\n\nSent from your portfolio website.`
+          );
+          const mailtoLink = `mailto:mansi.jogani902@gmail.com?subject=${subject}&body=${body}`;
+          
+          if (error.text && error.text.includes("template")) {
+            setStatus("📧 EmailJS template not configured. Opening email client...");
+            setTimeout(() => {
+              window.open(mailtoLink, '_blank');
+              setStatus("✅ Email client opened! Please send the email from there.");
+            }, 1000);
           } else {
-            setStatus("❌ Network error. Please try again or contact via email/WhatsApp.");
+            setStatus("❌ Email service error. Opening email client as backup...");
+            setTimeout(() => {
+              window.open(mailtoLink, '_blank');
+              setStatus("✅ Email client opened! Please send the email from there.");
+            }, 1000);
           }
         }
       );
@@ -157,6 +173,38 @@ export default function Contact() {
 
         {status && <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="contact-status">{status}</motion.p>}
       </motion.form>
+
+      {/* Backup Email Button */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        style={{ marginTop: "1rem", textAlign: "center" }}
+      >
+        <motion.button
+          onClick={() => {
+            const subject = encodeURIComponent(form.subject || "Contact from Portfolio");
+            const body = encodeURIComponent(
+              `Hi Mansi,\n\nName: ${form.name || "[Your Name]"}\nContact: ${form.contact || "[Your Email/Phone]"}\n\nMessage:\n${form.message || "[Your Message]"}\n\nSent from your portfolio website.`
+            );
+            window.open(`mailto:mansi.jogani902@gmail.com?subject=${subject}&body=${body}`, '_blank');
+          }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          style={{
+            background: "linear-gradient(90deg, #004c99, #0077ff)",
+            color: "#fff",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontSize: "0.9rem",
+            fontWeight: "500"
+          }}
+        >
+          📧 Or Send Direct Email
+        </motion.button>
+      </motion.div>
     </section>
   );
 }

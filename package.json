@@ -2,10 +2,16 @@
   "name": "ashthetic-portfolio-final",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "d3": "^7.9.0",
@@ -19,6 +25,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.0",
+    "rimraf": "^6.0.1",
+    "terser": "^5.44.1",
     "vite": "^5.0.0"
   }
 }

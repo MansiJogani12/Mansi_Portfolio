@@ -41,28 +41,44 @@ export default function Contact() {
       return;
     }
 
-    setStatus("Sending...");
+    setStatus("📤 Sending...");
+
+    // Check if EmailJS environment variables are loaded
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus("⚠️ Email service not configured. Please contact via other methods.");
+      return;
+    }
 
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           from_name: form.name,
           contact_info: form.contact,
           subject: form.subject,
           message: form.message,
+          to_name: "Mansi Jogani",
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       )
       .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setStatus("✅ Message sent successfully! I'll get back to you soon.");
           setForm({ name: "", contact: "", subject: "", message: "" });
         },
         (error) => {
           console.error("FAILED...", error);
-          setStatus("❌ Failed to send. Try again later.");
+          if (error.text) {
+            setStatus(`❌ Failed to send: ${error.text}`);
+          } else {
+            setStatus("❌ Network error. Please try again or contact via email/WhatsApp.");
+          }
         }
       );
   };

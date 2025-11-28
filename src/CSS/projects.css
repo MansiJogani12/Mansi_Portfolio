@@ -24,6 +24,27 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
+/* Responsive Projects Styles */
+@media (max-width: 768px) {
+  .projects-container { padding: 20px; }
+  .projects-title { font-size: 2rem; }
+  .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+  .project-card { padding: 14px; }
+  .project-ss img { height: 180px; }
+  .project-title { font-size: 16px; }
+  .project-desc { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .projects-container { padding: 15px; }
+  .projects-title { font-size: 1.8rem; }
+  .projects-grid { gap: 15px; }
+  .project-card { padding: 12px; }
+  .project-ss img { height: 160px; }
+  .project-links { gap: 8px; }
+  .btn { padding: 5px 10px; font-size: 12px; }
+}
+
 .project-card {
   background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(10,10,10,0.9));
   border: 1px solid rgba(0,255,255,0.1);

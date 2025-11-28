@@ -11,6 +11,43 @@
   color: #fff;
 }
 
+/* Responsive Home Styles */
+@media (max-width: 1024px) {
+  .home-section { padding: 2rem 1.5rem 1rem; gap: 2.5rem; }
+  .home-top { max-width: 900px; }
+  .home-info { min-width: 320px; }
+}
+
+@media (max-width: 768px) {
+  .home-section { padding: 1.5rem 1rem 0.5rem; gap: 2rem; }
+  .home-top { flex-direction: column; gap: 1.5rem; }
+  .photo-container { flex: 0 0 280px; }
+  .photo-frame { width: 250px; height: 250px; }
+  .photo-ring { width: 280px; height: 280px; }
+  .home-info { min-width: 280px; text-align: center; }
+  .home-title { font-size: 2.2rem; }
+  .typing-effect { font-size: 1.1rem; }
+  .profession-tags { justify-content: center; }
+  .info-cards { justify-content: center; }
+  .quick-links-list { gap: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .home-section { padding: 1rem 0.8rem 0.5rem; gap: 1.5rem; }
+  .photo-container { flex: 0 0 220px; }
+  .photo-frame { width: 200px; height: 200px; }
+  .photo-ring { width: 230px; height: 230px; }
+  .home-info { min-width: 250px; }
+  .home-title { font-size: 1.8rem; }
+  .typing-effect { font-size: 1rem; }
+  .profession-tag { padding: 6px 12px; font-size: 0.85rem; }
+  .info-card { min-width: 140px; padding: 10px 14px; }
+  .info-card strong { font-size: 0.9rem; }
+  .info-card p { font-size: 0.8rem; }
+  .quick-links-list { gap: 1rem; }
+  .quick-link-img { width: 45px; height: 45px; }
+}
+
 .home-top {
   display: flex;
   align-items: center;

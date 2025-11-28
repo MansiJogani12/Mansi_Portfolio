@@ -112,10 +112,36 @@
 }
 
 .nav-menu {
-  position: fixed; /* absolute can get blocked by parent */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* cover full screen */
-  z-index: 1000; /* already done */
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 1024px) {
+  .nav-links { gap: 1.5rem; }
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .mobile-btn { display: block; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 0.6rem 1.5rem; }
+  .logo { font-size: 1.2rem; }
+  .nav-name h1 { font-size: 13px; }
+  .nav-tagline { font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+  .nav { padding: 0.5rem 1rem; }
+  .nav-left { gap: 10px; }
+  .logo { font-size: 1.1rem; }
+  .nav-name h1 { font-size: 12px; }
+  .nav-tagline { font-size: 10px; }
+  .mobile-dropdown a { font-size: 16px; padding: 1rem 0; }
 }

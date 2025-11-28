@@ -20,6 +20,29 @@
   z-index: 1;
 }
 
+/* Responsive About Styles */
+@media (max-width: 768px) {
+  .about-container { padding: 2rem 0.8rem; }
+  .about-card { max-width: 95%; padding: 2rem 2rem; }
+  .about-header { font-size: 1.6rem; }
+  .about-text { font-size: 1rem; }
+  .education-header { font-size: 1.4rem; }
+  .edu-card { padding: 1.2rem 1.5rem; gap: 1rem; flex-direction: column; text-align: center; }
+  .edu-title { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .about-container { padding: 1.5rem 0.5rem; }
+  .about-card { padding: 1.5rem 1.5rem; }
+  .about-header { font-size: 1.4rem; }
+  .about-text { font-size: 0.95rem; }
+  .education-header { font-size: 1.2rem; }
+  .edu-card { padding: 1rem 1.2rem; }
+  .edu-title { font-size: 1rem; }
+  .edu-institute { font-size: 0.95rem; }
+  .edu-details { font-size: 0.9rem; }
+}
+
 .about-card {
   width: 100%;
   max-width: 1100px;

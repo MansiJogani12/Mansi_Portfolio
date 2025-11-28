@@ -107,11 +107,46 @@ body{
 .cert{padding:12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
 
 /* responsive */
+@media (max-width:1200px) {
+  .container{padding:0 15px}
+  .nav{padding:12px 20px}
+}
+
 @media (max-width:900px){
   .hero-hero{flex-direction:column;align-items:center;text-align:center;padding:24px}
   .hero-photo{width:260px;height:260px}
   .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
   .skills-stage{height:360px}
+  .nav{padding:8px 15px}
+  .nav-links{gap:1rem}
+  .projects-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:768px) {
+  .container{max-width:100%;padding:0 10px}
+  .card{padding:15px}
+  .hero-hero{padding:15px}
+  .hero-photo{width:220px;height:220px}
+  .nav{flex-wrap:wrap;padding:10px 15px}
+  .brand h1{font-size:14px}
+  .nav-links{display:none}
+  .projects-grid{grid-template-columns:1fr;gap:15px}
+  .certs-grid{grid-template-columns:1fr;gap:15px}
+  .skills-stage{height:300px}
+}
+
+@media (max-width:480px) {
+  .container{padding:0 8px}
+  .card{padding:12px}
+  .hero-hero{padding:10px}
+  .hero-photo{width:180px;height:180px}
+  .hero-intro h1{font-size:28px}
+  .nav{padding:8px 12px}
+  .brand{gap:8px}
+  .brand .logo{width:35px;height:35px;font-size:14px}
+  .brand h1{font-size:12px}
+  .gallery-grid{grid-template-columns:1fr}
+  .projects-grid{gap:12px}
 }
 
 /* 🌙 Contact Section Styling */

@@ -95,3 +95,27 @@
   font-size: 0.7rem;
   color: #aaa;
 }
+
+/* Responsive Blog Styles */
+@media (max-width: 768px) {
+  .blog-section { padding: 2rem 5%; }
+  .blog-title { font-size: 1.8rem; }
+  .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .blog-post { padding: 1.5rem; }
+  .post-title { font-size: 1.1rem; }
+  .post-text { font-size: 0.9rem; }
+  .vote-container { gap: 0.8rem; }
+  .vote-btn-circle { padding: 0.7rem; }
+}
+
+@media (max-width: 480px) {
+  .blog-section { padding: 1.5rem 3%; }
+  .blog-title { font-size: 1.6rem; }
+  .blog-sub { font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .blog-post { padding: 1.2rem; }
+  .post-title { font-size: 1rem; }
+  .post-text { font-size: 0.85rem; line-height: 1.5; }
+  .vote-container { gap: 0.6rem; }
+  .vote-btn-circle { padding: 0.6rem; }
+  .vote-count { font-size: 0.65rem; }
+}

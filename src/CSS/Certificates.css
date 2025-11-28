@@ -108,3 +108,30 @@
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255,255,255,0.2);
 }
+
+/* Responsive Certificates Styles */
+@media (max-width: 768px) {
+  .certs-section { padding: 30px 0; }
+  .certs-card { padding: 20px; }
+  .certs-card h2 { font-size: 1.6rem; }
+  .certs-tabs { gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .tab { padding: 6px 14px; font-size: 0.9rem; }
+  .certs-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .cert.card { padding: 14px; }
+  .cert.card img { height: 140px; }
+  .cert.card strong { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .certs-section { padding: 20px 0; }
+  .certs-card { padding: 16px; }
+  .certs-card h2 { font-size: 1.4rem; }
+  .tab { padding: 5px 12px; font-size: 0.85rem; }
+  .certs-grid { grid-template-columns: 1fr; gap: 14px; }
+  .cert.card { padding: 12px; }
+  .cert.card img { height: 120px; }
+  .cert.card strong { font-size: 14px; }
+  .cert.card .muted { font-size: 12px; }
+  .cert.card .btn { padding: 5px 12px; font-size: 0.9rem; }
+  .modal img { max-width: 95%; max-height: 80vh; }
+}
